@@ -16,7 +16,7 @@ backend servers
         balance roundrobin
 
 {{range getvs "/whoami/*" }}
-        server whoami{{.}} {{.}} maxconn 32
+        server whoami{{.}} {{.}} check maxconn 32
 {{end}}
 
 listen stats :1936
