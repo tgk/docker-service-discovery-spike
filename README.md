@@ -16,17 +16,17 @@
 
 ## Building and starting proxy
 
-    # Proxy uses confd to current available services from Consul and to
-    # update the haproxy configuration file.
+    # Proxy uses confd to read current available services from Consul
+    # and to update the haproxy configuration file.
 
     docker build -t examplehaproxy .
-    docker run -d --name example -p 80:80 -p 1936:1936 -e CONSUL_ADDR=${EXAMPLE_ADDR}:8500 examplehaproxy:latest
+    docker run -d -p 80:80 -p 1936:1936 -e CONSUL_ADDR=${EXAMPLE_ADDR}:8500 examplehaproxy:latest
 
     # Check port 1936 for fancy interface.
 
 ## Starting some "whoami" apps
 
-    docker run -d -P -t jwilder/whoami
+    docker run -d -t jwilder/whoami
 
 ## Checking it out
 
